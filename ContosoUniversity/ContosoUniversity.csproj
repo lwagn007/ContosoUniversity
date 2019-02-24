@@ -156,9 +156,15 @@
     <Compile Include="Migrations\201902241821521_InitialCreate.Designer.cs">
       <DependentUpon>201902241821521_InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201902242110511_updatestudentmodel.cs" />
+    <Compile Include="Migrations\201902242110511_updatestudentmodel.Designer.cs">
+      <DependentUpon>201902242110511_updatestudentmodel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Course.cs" />
     <Compile Include="Models\Enrollments.cs" />
+    <Compile Include="Models\Instructor.cs" />
+    <Compile Include="Models\OfficeAssignment.cs" />
     <Compile Include="Models\Student.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\EnrollmentDateGroup.cs" />
@@ -286,6 +292,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201902241821521_InitialCreate.resx">
       <DependentUpon>201902241821521_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902242110511_updatestudentmodel.resx">
+      <DependentUpon>201902242110511_updatestudentmodel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
