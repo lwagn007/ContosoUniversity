@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -99,7 +100,7 @@ namespace ContosoUniversity.Controllers
                     return RedirectToAction("Index");
                 }
             }
-            catch (DataException /*dataException*/)
+            catch (RetryLimitExceededException /*dataException*/)
             {
                 /* dataException variable could be used to log error*/
                 ModelState.AddModelError("", "Unable to save changes.");
@@ -142,7 +143,7 @@ namespace ContosoUniversity.Controllers
                     db.SaveChanges();
                     return RedirectToAction("Index");
                 }
-                catch (DataException /*dataException*/)
+                catch (RetryLimitExceededException /*dataException*/)
                 {
                     /* dataException variable could be used to log error*/
                     ModelState.AddModelError("", "Unable to save changes");
@@ -185,7 +186,7 @@ namespace ContosoUniversity.Controllers
                 //Student studentToDelete = new Student() { ID = id };
                 //db.Entry(studentToDelete).State = EntityState.Deleted;
             }
-            catch (DataException)
+            catch (RetryLimitExceededException)
             {
                 return RedirectToAction("Delete", new { id = id, saveChangesError = true });
             }
