@@ -19,25 +19,27 @@ namespace ContosoUniversity.Controllers
         // GET: Student
         public ViewResult Index(string sortOrder, string currentFilter, string searchString, int? page)
         {
-            //Sort ViewBags
             ViewBag.CurrentSort = sortOrder;
             ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
             ViewBag.DateSortParm = sortOrder == "Date" ? "date_desc" : "Date";
 
             if (searchString != null)
+            {
                 page = 1;
+            }
             else
+            {
                 searchString = currentFilter;
+            }
 
             ViewBag.CurrentFilter = searchString;
 
             var students = from s in db.Students
                            select s;
-            //Search
             if (!String.IsNullOrEmpty(searchString))
             {
-                students = students.Where(s => s.LastName.Contains(searchString) 
-                                        || s.FirstMidName.Contains(searchString));
+                students = students.Where(s => s.LastName.Contains(searchString)
+                                       || s.FirstMidName.Contains(searchString));
             }
             switch (sortOrder)
             {
@@ -48,6 +50,9 @@ namespace ContosoUniversity.Controllers
                     students = students.OrderBy(s => s.EnrollmentDate);
                     break;
                 case "date_desc":
+                    students = students.OrderByDescending(s => s.EnrollmentDate);
+                    break;
+                default:  // Name ascending 
                     students = students.OrderBy(s => s.LastName);
                     break;
             }
