@@ -140,7 +140,9 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CourseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\InstructorController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
     <Compile Include="DAL\SchoolConfiguration.cs" />
     <Compile Include="DAL\SchoolContext.cs" />
@@ -152,22 +154,24 @@
     <Compile Include="Logging\Logger.cs" />
     <Compile Include="Logging\SchoolInteceptorLogging.cs" />
     <Compile Include="Logging\SchoolInterceptorTransientErrors.cs" />
-    <Compile Include="Migrations\201902241821521_InitialCreate.cs" />
-    <Compile Include="Migrations\201902241821521_InitialCreate.Designer.cs">
-      <DependentUpon>201902241821521_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\201902251607286_ComplexDataModel.cs" />
+    <Compile Include="Migrations\201902251607286_ComplexDataModel.Designer.cs">
+      <DependentUpon>201902251607286_ComplexDataModel.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201902242110511_updatestudentmodel.cs" />
-    <Compile Include="Migrations\201902242110511_updatestudentmodel.Designer.cs">
-      <DependentUpon>201902242110511_updatestudentmodel.cs</DependentUpon>
+    <Compile Include="Migrations\201902251608532_ComplexDataModel1.cs" />
+    <Compile Include="Migrations\201902251608532_ComplexDataModel1.Designer.cs">
+      <DependentUpon>201902251608532_ComplexDataModel1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Course.cs" />
+    <Compile Include="Models\Department.cs" />
     <Compile Include="Models\Enrollments.cs" />
     <Compile Include="Models\Instructor.cs" />
     <Compile Include="Models\OfficeAssignment.cs" />
     <Compile Include="Models\Student.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\EnrollmentDateGroup.cs" />
+    <Compile Include="ViewModels\InstructorIndexData.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -274,6 +278,16 @@
     <Content Include="Scripts\umd\popper.js.map" />
     <Content Include="Scripts\umd\popper-utils.min.js.map" />
     <Content Include="Scripts\umd\popper-utils.js.map" />
+    <Content Include="Views\Course\Create.cshtml" />
+    <Content Include="Views\Course\Delete.cshtml" />
+    <Content Include="Views\Course\Details.cshtml" />
+    <Content Include="Views\Course\Edit.cshtml" />
+    <Content Include="Views\Course\Index.cshtml" />
+    <Content Include="Views\Instructor\Create.cshtml" />
+    <Content Include="Views\Instructor\Delete.cshtml" />
+    <Content Include="Views\Instructor\Details.cshtml" />
+    <Content Include="Views\Instructor\Edit.cshtml" />
+    <Content Include="Views\Instructor\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -290,11 +304,11 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201902241821521_InitialCreate.resx">
-      <DependentUpon>201902241821521_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201902251607286_ComplexDataModel.resx">
+      <DependentUpon>201902251607286_ComplexDataModel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201902242110511_updatestudentmodel.resx">
-      <DependentUpon>201902242110511_updatestudentmodel.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201902251608532_ComplexDataModel1.resx">
+      <DependentUpon>201902251608532_ComplexDataModel1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

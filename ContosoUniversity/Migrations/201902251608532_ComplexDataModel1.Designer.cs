@@ -7,13 +7,13 @@ namespace ContosoUniversity.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class updatestudentmodel : IMigrationMetadata
+    public sealed partial class ComplexDataModel1 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(updatestudentmodel));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(ComplexDataModel1));
         
         string IMigrationMetadata.Id
         {
-            get { return "201902242110511_updatestudentmodel"; }
+            get { return "201902251608532_ComplexDataModel1"; }
         }
         
         string IMigrationMetadata.Source
